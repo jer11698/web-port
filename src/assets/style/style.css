@@ -89,6 +89,10 @@
   height: 10rem;
 }
 
+.skill-style .skill img {
+  width: 349px;
+}
+
 /* Education */
 .education-style {}
 

@@ -18,25 +18,14 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="me-auto"></div>
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#skill">Skill</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#employment">EMPLOYMENT</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#education">Education</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contect">Contact</a>
+              <li
+                v-for="listNameNav in listNameNavs"
+                :key="listNameNav"
+                class="nav-item"
+              >
+                <a class="nav-link" :href="'#' + listNameNav.text">{{
+                  listNameNav.text
+                }}</a>
               </li>
             </ul>
           </div>
@@ -47,9 +36,21 @@
 </template>
 
 <script>
-import $ from 'jquery'
+import $ from "jquery";
 
 export default {
+  data() {
+    return {
+      listNameNavs: [
+        { text: "home" },
+        { text: "about" },
+        { text: "skill" },
+        { text: "employment" },
+        { text: "education" },
+        { text: "contact" },
+      ],
+    };
+  },
   mounted() {
     $(document).ready(function () {
       let nav_offset_top = $(".header-style").height() + 50;

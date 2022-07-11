@@ -38,3 +38,19 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      listName: [
+        {
+          tilte: "King Mongkut's Institute of Technology Ladkrabang",
+          caption: "Information Technology, Multimedia",
+          details: ["GRAPHICS DESIGN PRINCIPLES", ""],
+        },
+      ],
+    };
+  },
+};
+</script>
